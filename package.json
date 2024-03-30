@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "description": "ICP Expense Calculator application",
   "scripts": {
+    "build": "webpack",
+    "prebuild": "dfx generate",
+    "start": "webpack serve --mode development --env development",
+    "deploy:local": "dfx deploy --network=local",
+    "deploy:ic": "dfx deploy --network=ic",
+    "generate": "dfx generate dfinity_js_backend",
+    "gen-deploy:local": "dfx generate dfinity_js_backend && dfx deploy --network=local",
     "update": "npx npm-check-updates -u",
     "update.check": "npx npm-check-updates"
   },
@@ -10,13 +17,46 @@
     "@dfinity/agent": "^0.21.4",
     "@dfinity/candid": "^0.21.4",
     "azle": "^0.20.2",
+    "cors": "^2.8.5",
     "express": "^4.19.1",
-    "uuid": "^9.0.1"
+    "flowbite": "^2.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "uuid": "^9.0.1",
+    "vm-browserify": "^1.1.2",
+    "web-vitals": "^3.5.2"
   },
   "engines": {
     "node": "^20"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21"
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-react": "^7.18.6",
+    "@types/express": "^4.17.21",
+    "assert": "2.0.0",
+    "autoprefixer": "^10.4.19",
+    "babel-loader": "^8.0.0",
+    "buffer": "6.0.3",
+    "copy-webpack-plugin": "^11.0.0",
+    "crypto-browserify": "^3.12.0",
+    "css-loader": "^6.7.3",
+    "dotenv": "^16.4.5",
+    "events": "3.3.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "5.5.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "postcss": "^8.4.38",
+    "process": "0.11.10",
+    "stream-browserify": "3.0.0",
+    "style-loader": "^3.3.2",
+    "tailwindcss": "^3.4.3",
+    "terser-webpack-plugin": "^5.3.3",
+    "util": "0.12.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.8.1"
   }
 }

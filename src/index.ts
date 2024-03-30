@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { Server, StableBTreeMap, ic } from 'azle';
 import express from 'express';
+import cors from 'cors';
 
 class Expense {
   id: string;
@@ -19,6 +20,7 @@ const incomeStorage = StableBTreeMap<string, Income>(1);
 
 export default Server(() => {
   const app = express();
+  app.use(cors());
   app.use(express.json());
 
   app.get("/expenses", (req, res) => {
@@ -46,6 +48,13 @@ export default Server(() => {
     expensesStorage.remove(id);
     const expenses = expensesStorage.values()
     res.json({ expenses, message: "success" });
+  });
+
+  app.delete("/delete-income/:id", (req, res) => {
+    const id = req.params.id;
+    incomeStorage.remove(id);
+    const income = incomeStorage.values()
+    res.json({ income, message: "success" });
   });
 
   app.put("/update-expense/:id", (req, res) => {
