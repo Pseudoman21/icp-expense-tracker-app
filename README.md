@@ -50,3 +50,7 @@ You can send requests to the expense tracker application using a client such as 
 
 #### Contributing
 If you would like to contribute to the todo list application, feel free to fork the repository, make changes, and submit a pull request. Contributions are welcome and appreciated!
+
+Preview:
+![expense](https://github.com/Pseudoman21/icp-expense-tracker-app/assets/48127785/150311ab-9191-42c9-a78b-d1e671aaa43d)
+
